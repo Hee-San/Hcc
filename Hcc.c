@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     if (tokens[0].ty != TK_NUM)
         error(0);
 
-    printf("  movl  $%ld, %%eax\n", tokens[0].val);
+    printf("  movl  $%d, %%eax\n", tokens[0].val);
 
     int i = 1;
     while (tokens[i].ty != TK_EOF)
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
             i++;
             if (tokens[i].ty != TK_NUM)
                 error(i);
-            printf("  addl  $%ld, %%eax\n", tokens[i].val);
+            printf("  addl  $%d, %%eax\n", tokens[i].val);
             i++;
             continue;
         }
@@ -96,7 +96,7 @@ int main(int argc, char **argv)
             i++;
             if (tokens[i].ty != TK_NUM)
                 error(i);
-            printf("  subl  $%ld, %%eax\n", tokens[i].val);
+            printf("  subl  $%d, %%eax\n", tokens[i].val);
             i++;
             continue;
         }
