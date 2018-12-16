@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        fprintf(stderr, "Usage: Hcc <code>\n");
+        fprintf(stderr, "引数の個数が正しくありません。\nUsage: Hcc <code>\n");
         return 1;
     }
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
             printf("  subl  $%ld, %%eax\n", strtol(p, &p, 10));
             continue;
         }
-        fprintf(stderr, "unexpected character: %c\n", *p);
+        fprintf(stderr, "予期されていない文字です。: %c\n", *p);
         return 1;
     }
 
